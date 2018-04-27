@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+    <script src="../src/js/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var direction = 2;
+            var x = 0;
+
+            var render = function() {
+
+                if(x > 720 || x < 0) {
+                    direction *= -1;
+                }
+
+                x += direction;
+
+                var imgEl = $("#imgContent")[0];
+
+                imgEl.style.transform = "rotate(" + x + "deg)";
+
+                requestAnimationFrame(render);
+            };
+            render();
+        });
+    </script>
+</head>
+<body>
+
+<div id="imgContent" style="position: absolute; left: 100px; top: 100px; border: solid 1px black">
+    <img src="img/HTML5_Badge_256.png" alt="">
+</div>
+
+</body>
+</html>

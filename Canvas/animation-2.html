@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation-1</title>
+    <script src="../src/js/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            console.log("document.ready");
+            var canvas = document.getElementById("canvas1");
+            var context = canvas.getContext("2d");
+            var l1 = 60;
+            var l2 = 0;
+
+            $("#m11").change(function() {
+                $("#m22").val((1-this.value) * (130 + l1));
+                // $("#m22").val((1-this.value) * 130);
+            });
+            //
+            // $("#m22").change(function() {
+            //     $("#dx").val(this.value * -200)
+            // });
+
+            var isAnimation = false;
+
+            $("#canvas1").mouseover(function() {
+                isAnimation = true;
+            });
+
+            $("#canvas1").mouseout(function() {
+                isAnimation = false;
+            });
+
+            $("#btnStart").click(function() {
+                isAnimation = true;
+            });
+
+            $("#btnStop").click(function() {
+                isAnimation = false;
+            });
+
+            var img = document.createElement("img");
+            img.src = "img/HTML5_Badge_256.png";
+
+            var render = function() {
+
+                canvas.width = canvas.width;
+
+                // default
+                // context.setTransform(1, 0, 0, 1, 0, 0);
+                // context.translate(l1, l2);
+                // context.beginPath();
+                // context.fillStyle = "#ccc";
+                // context.fillRect(0, 0, 256, 196);
+                // context.drawImage(img, 0, 0);
+                // context.closePath();
+
+                // setTransform
+                console.log(m11.value, m12.value, dx.value, m21.value, m22.value, dy.value);
+                context.setTransform(m11.value, m12.value, dx.value, m21.value, m22.value, dy.value);
+                context.translate(l1, l2 + 50);
+
+                context.beginPath();
+                context.fillStyle = "#ededed";
+                context.fillRect(0, 0, 256, 196);
+                context.drawImage(img, 0, 0);
+                // context.font="60px Verdana";
+                // context.fillText("Hello World!",0,0);
+                context.closePath();
+
+                if(isAnimation) {
+                    var value = parseFloat($("#m11").val());
+                    if(value > 1 || value < -1) {
+                        isDirection.value = parseFloat(isDirection.value) * -1;
+                    }
+
+                    $("#m11").val(value + parseFloat(isDirection.value));
+                    $("#m11").trigger("change");
+                }
+
+                requestAnimationFrame(render);
+            };
+
+            render();
+        });
+    </script>
+</head>
+<body>
+    <div style="position: relative; height: 400px">
+        <canvas id="canvas1" width="400" height="400" style="border: solid 1px black; position: absolute"></canvas>
+    </div>
+    <br/>
+    <div>
+        <label for="isDirection">isDirection: </label><input type="number" id="isDirection" name="isDirection" value="0.001">
+    </div>
+    <div>
+        <label for="m11">m11: </label><input type="number" id="m11" name="m11" value="1" step="0.1">
+        <label for="m12">m12: </label><input type="number" id="m12" name="m12" value="0" step="0.1">
+        <label for="dx">dx: </label><input type="number" id="dx" name="dx" value="0" step="0.1">
+    </div>
+    <div>
+        <label for="m21">m21: </label><input type="number" id="m21" name="m21" value="1" step="0.1">
+        <label for="m22">m22: </label><input type="number" id="m22" name="m22" value="0" step="1">
+        <label for="dy">dy: </label><input type="number" id="dy" name="dy" value="0" step="0.1">
+    </div>
+    <div>
+        <button id="btnStart">Start</button>
+        <button id="btnStop">Stop</button>
+    </div>
+
+    <style type="text/css">
+
+    </style>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+
+        var resultObj;
+
+        function load() {
+            var src = "https://sgisapi.kostat.go.kr/OpenAPI3/auth/javascriptAuth?consumer_key=31a788b68c374e56bbe7";
+            var url = "https://sgisapi.kostat.go.kr/OpenAPI3/auth/javascriptAuth";
+            var data = {
+                consumer_key: "1475d1e918e54046861e"
+            };
+
+            $.ajax(url, {
+                type: 'GET',
+                data: data,
+                dataType: 'json',
+                success: function(res) {
+                    console.log("success", res);
+                },
+                complete: function(res) {
+                    console.log("complete", res);
+                    resultObj = res;
+                },
+                error: function(res) {
+                    console.log("error", res);
+                }
+
+            });
+        }
+
+    </script>
+</head>
+<body onload="load()">
+
+</body>
+</html>
