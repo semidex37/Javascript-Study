@@ -1,0 +1,65 @@
+{
+  "ChartType": "BarStackedChart",
+  "Series": [
+    {
+      "Name": "VAL1",
+      "YAxis": "Y1",
+      "FillColor": "#1A6B9A",
+      "BorderColor": "",
+      "Format": "{0:N0}",
+      "LineColor": "#1A6B9A",
+      "ValueList": [
+        4178,
+        5332.5,
+        8406.75,
+        2369.25,
+        7093,
+        4970.5
+      ],
+      "ChartType": "BarStackedChart"
+    },
+    {
+      "Name": "VAL2",
+      "YAxis": "Y1",
+      "FillColor": "#F8A527",
+      "BorderColor": "",
+      "Format": "{0:N0}",
+      "LineColor": "#F8A527",
+      "ValueList": [
+        8960,
+        9567,
+        4977,
+        3399,
+        3781,
+        7195
+      ],
+      "ChartType": "BarStackedChart"
+    },
+    {
+      "Name": "VAL3",
+      "YAxis": "Y1",
+      "FillColor": "#38781B",
+      "BorderColor": "",
+      "Format": "{0:N0}",
+      "LineColor": "#38781B",
+      "ValueList": [
+        9852,
+        1576,
+        6542,
+        3254,
+        6548,
+        1235
+      ],
+      "ChartType": "BarStackedChart"
+    }
+  ],
+  "Range": "B2:M11",
+  "CategoryList": [
+    "S440",
+    "S4200",
+    "S4100",
+    "S4000",
+    "S3400",
+    "S3300"
+  ]
+}

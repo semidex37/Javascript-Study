@@ -1,0 +1,87 @@
+﻿{  // WorkBookModel Object
+  "FileName" : "내보내기.xlsx",
+  "FontFamily": "맑은 고딕",
+  "FontSize" : "12",
+  "Sheets" : [
+    {  // WorkSheetModel Object
+      "SheetName" : "Sheet1",
+      "Style": [
+        {
+          "Range": "A1:B2",
+          "IsNumeric": 0,
+          "Format": "",
+          "Width": 100,
+          "Height": 23,
+          "TextAlign": 0,
+          "FontColor" : "#000000",
+          "FontFamily" : "맑은 고딕",
+          "FontSize" : 12,
+          "Italic" : 1,
+          "Bold" : 1
+        }
+      ],
+      "Cells": [
+        {
+          "Range": "A1",
+          "Value": "abcd",
+          "IsNumeric": 0,
+          "Format": "",
+          "Width": 100,
+          "Height": 23,
+          "TextAlign": 0,
+          "FontColor" : "#000000",
+          "FontFamily" : "맑은 고딕",
+          "FontSize" : 12,
+          "Italic" : 1,
+          "Bold" : 1
+        }
+      ],
+      "MergeCells": [
+        "B1:C3",
+        "B4:C6"
+      ],
+      "Controls" : [
+        {  // GridModel Object
+          "Range" : "A5",    // 컨트롤 시작 위치
+          "Type" : 0,      // 열거형 정보는 UML 참조
+          "BorderColor" : "#bbc7d3",  // 그리드 라인 색상
+          "MaxRow" : 11,    // 최대 Row 수
+          "MaxCol" : 9,     // 최대 Column 수
+          "Cells" : [      // CellModel Object
+            {
+              "BackgroundColor" : "#EAF4FE",  // 셀 배경 색상(#FFFFFF일 경우 생략)
+              "Row" : 0,        // Row Index
+              "Col" : 0,        // Column Index
+              "RowSpan" : 2,      // Row 병합 사이즈(1일 경우 생략)
+              "ColSpan" : 2,      // Column 병합 사이즈(1일 경우 생략)
+              "Value" : "1234",       // 표시될 값
+              "IsNumeric" : 1,      // 데이터 유형.(0 : 문자, 1 : 숫자) => 문자형일 경우 생략
+              "Format" : "{0:N2}",      // 서식(없을 경우 생략.)
+              "Width" : 100,       // 셀 가로 길이
+              "Height" : 23,      // 셀 세로 길이
+              "TextAlign" : 0,       // 글자 정렬.(0 : 왼쪽 정렬, 1 : 중앙 정렬, 2 : 오른쪽 정렬)
+              "FontColor" : "#000000",     // 글자 색상(#000000일 경우 생략)
+              "FontFamily" : "맑은 고딕",     // 글자체
+              "FontSize" : 12,       // 글자 크기
+              "Italic" : 1,         // 글자 Italic 유무(0 : false, 1 : true) => false일 경우 생략
+              "Bold" : 1         // 글자 Bold 유무(0 : false, 1 : true) => false일 경우 생략
+            },
+            {  // Other CellModel
+              //              ...
+              //              ...
+              //              ...
+              //              ...
+            }
+          ]
+        },
+        {  // Other Control Model(ex)ChartModel, ValueModel, GridModel...
+          //          ...
+        }
+      ]
+    },
+    {  // Other WorkSheetModel
+      //      ...
+    }
+
+  ]
+}
