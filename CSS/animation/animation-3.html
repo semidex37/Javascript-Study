@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation-1</title>
+</head>
+<body>
+
+<div id="div1" class="box1"></div>
+
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+    @keyframes div1 {
+        0% { background-color: red; }
+        25% { background-color: green; }
+        50% { background-color: blue; }
+        100% { background-color: black; }
+    }
+
+    .box1 {
+        background: #000000;
+        border: solid 1px black;
+        width: 100px;
+        height: 100px;
+        animation-name: div1;
+        animation-duration: 8s;
+        animation-delay: 1s;
+    }
+
+</style>
+
+</body>
+</html>

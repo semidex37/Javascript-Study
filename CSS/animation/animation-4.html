@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+        }
+
+        @keyframes mymove {
+            0% {left: 100px; background-color: green;}
+            30% {}
+            60% {}
+            100% {left: 400px; background-color: blue;}
+        }
+    </style>
+</head>
+<body>
+<h1>Change animation-play-state with JavaScript</h1>
+
+<p>Click the buttons to Play/Pause the animation:</p>
+<button onclick="myPlayFunction()">Play</button>
+<button onclick="myPauseFunction()">Pause</button>
+
+<script>
+    function myPlayFunction() {
+        // document.getElementById("myDIV").style.WebkitAnimationPlayState = "running"; // Safari 4.0 - 8.0
+        // document.getElementById("myDIV").style.animationPlayState = "running";
+        document.getElementById("myDIV").classList.add("animationStop");
+    }
+
+    function myPauseFunction() {
+        // document.getElementById("myDIV").style.WebkitAnimationPlayState = "paused"; // Safari 4.0 - 8.0
+        // document.getElementById("myDIV").style.animationPlayState = "paused";
+        document.getElementById("myDIV").classList.remove("animationStop");
+    }
+</script>
+
+<p><strong>Note:</strong> The animationPlayState property is not supported in Internet Explorer 9 and earlier versions.</p>
+
+<div id="wrap">
+    <div id="container">
+        <div id="myDIV" class="box" style="left: 60px; top: 60px;"></div>
+    </div>
+</div>
+
+
+<style type="text/css">
+    #wrap {
+        border: solid 1px black;
+        width: 550px;
+        height: 550px;
+    }
+
+    #container {
+        position: relative;
+        margin: 5px;
+        border: solid 1px black;
+        width: calc(100% - 15px);
+        height: calc(100% - 15px);
+    }
+
+    #myDIV {
+        position: absolute;
+        left: 50px;
+        top: 50px;
+
+        animation-name: mymove;
+        animation-duration: 4s;
+        animation-delay: 1s;
+        animation-iteration-count: infinite;
+        /*animation-play-state: paused;*/
+        animation-direction: alternate;
+        animation-fill-mode: both;
+        animation-timing-function: linear
+
+    }
+
+    .animationStop {
+        animation-play-state: paused;
+    }
+
+</style>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation-1</title>
+</head>
+<body>
+
+<div id="div1" class="box1"></div>
+
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+    @keyframes div1 {
+        from { background-color: #000000; }
+        to { background-color: #ffffff; }
+    }
+
+    .box1 {
+        background: #000000;
+        border: solid 1px black;
+        width: 100px;
+        height: 100px;
+        -webkit-animation-name: div1;
+        -moz-animation-name: div1;
+        -o-animation-name: div1;
+        animation-name: div1;
+        animation-delay: 0s;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+/*
+    animation-name: (string)
+    animation-duration: 0s;
+    animation-delay: 0s;
+    animation-iteration-count: (number)
+    animation-direction: normal, reverse, alternate, alternate-reverse
+    animation-timing-function: ease, linear, ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n)
+    animation-fill-mode: none, forwards, backwards, both
+    animationPlayState: running, paused
+
+
+*/
+
+</style>
+
+</body>
+</html>
