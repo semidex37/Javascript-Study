@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<h1>Change animation-play-state with JavaScript</h1>
+
+<p>Click the buttons to Play/Pause the animation:</p>
+<button onclick="myPlayFunction()">Play</button>
+<button onclick="myPauseFunction()">Pause</button>
+
+<p>Animation Type:</p>
+<select name="myAnimationOption" id="myAnimationOption" onchange="myAnimationFunction()">
+    <option value="1">Type 1 - X</option>
+    <option value="2">Type 2 - X, Y</option>
+    <option value="3">Type 3 - Y, Rotate</option>
+    <option value="4">Type 4 - Rotate</option>
+    <option value="5">Type 5 - Move</option>
+</select>
+<!--<button onclick="myAnimationFunction()">Update</button>-->
+
+<script>
+    function myPlayFunction() {
+        // document.getElementById("myDIV").style.WebkitAnimationPlayState = "running"; // Safari 4.0 - 8.0
+        // document.getElementById("myDIV").style.animationPlayState = "running";
+        document.getElementById("myDIV").classList.remove("animationStop");
+    }
+
+    function myPauseFunction() {
+        // document.getElementById("myDIV").style.WebkitAnimationPlayState = "paused"; // Safari 4.0 - 8.0
+        // document.getElementById("myDIV").style.animationPlayState = "paused";
+        document.getElementById("myDIV").classList.add("animationStop");
+    }
+</script>
+
+<p><strong>Note:</strong> The animationPlayState property is not supported in Internet Explorer 9 and earlier versions.</p>
+
+
+<p></p>
+<script>
+    function myAnimationFunction() {
+        var option = document.getElementById("myAnimationOption").value;
+
+        var el = document.getElementById("myDIV");
+        var time = new Date().getTime();
+        var newClassID = "_ANIMATION_CLASS_" + time;
+        var newAnimationID = "_ANIMATION_" + time;
+
+        // Remove Animation Class
+        var classList = el.classList;
+        var removeClassList = [];
+        for(var idx=0, idxLen=classList.length; idx<idxLen; idx++) {
+            // 삭제 대상 Class
+            if(/ANIMATION_[\d]/g.test(classList[idx])) {
+                removeClassList.push(classList[idx]);
+            }
+        }// ~for - idx (classList)
+        for(var idx in removeClassList) {
+            classList.remove(removeClassList[idx]);
+        }// ~for - idx (removeClassList)
+
+        // Create Style
+        var myAnimationStyleID = "myDIV_myAnimationStyle";
+        var style = document.getElementById(myAnimationStyleID) || document.createElement('style');
+        style.setAttribute('type', 'text/css');
+        style.id = myAnimationStyleID;
+
+        var styleText = "";
+
+
+        switch (option) {
+            case '1':
+                // Add KeyFrames
+                styleText += "    @keyframes " + newAnimationID + " {\n";
+                styleText += "        0% {background-color: red;}\n";
+                styleText += "        30% {}\n";
+                styleText += "        60% {}\n";
+                styleText += "        100% {left: 400px; background-color: yellow;}\n";
+                styleText += "    }\n";
+
+                // Add Animation Class
+                styleText += "\n";
+                styleText += "    ." + newClassID + " {\n";
+                styleText += "        animation-name: " + newAnimationID + ";\n";
+                styleText += "        animation-duration: 4s;\n";
+                styleText += "        animation-delay: .2s;\n";
+                styleText += "        animation-iteration-count: infinite;\n";
+                styleText += "        animation-direction: alternate;\n";
+                styleText += "        animation-fill-mode: both;\n";
+                styleText += "        animation-timing-function: linear\n";
+                styleText += "    }\n";
+                styleText += "\n";
+                break;
+
+            case '2':
+                // Add KeyFrames
+                styleText += "    @keyframes " + newAnimationID + " {\n";
+                styleText += "        50% {background-color: black;}\n";
+                styleText += "        100% {top: 250px; left: 400px;}\n";
+                styleText += "    }\n";
+
+                // Add Animation Class
+                styleText += "\n";
+                styleText += "    ." + newClassID + " {\n";
+                styleText += "        animation-name: " + newAnimationID + ";\n";
+                styleText += "        animation-duration: 4s;\n";
+                styleText += "        animation-delay: .2s;\n";
+                styleText += "        animation-iteration-count: infinite;\n";
+                styleText += "        animation-direction: alternate;\n";
+                styleText += "        animation-fill-mode: both;\n";
+                styleText += "        animation-timing-function: linear\n";
+                styleText += "    }\n";
+                styleText += "\n";
+                break;
+
+            case '3':
+                // Add KeyFrames
+                styleText += "    @keyframes " + newAnimationID + " {\n";
+                styleText += "        0% {background-color: green;}\n";
+                styleText += "        30% {}\n";
+                styleText += "        60% {}\n";
+                styleText += "        100% {top: 300px; background-color: blue; transform: rotate(360deg);}\n";
+                styleText += "    }\n";
+
+                // Add Animation Class
+                styleText += "\n";
+                styleText += "    ." + newClassID + " {\n";
+                styleText += "        animation-name: " + newAnimationID + ";\n";
+                styleText += "        animation-duration: 4s;\n";
+                styleText += "        animation-delay: .2s;\n";
+                styleText += "        animation-iteration-count: infinite;\n";
+                styleText += "        animation-direction: alternate;\n";
+                styleText += "        animation-fill-mode: both;\n";
+                styleText += "        animation-timing-function: linear\n";
+                styleText += "    }\n";
+                styleText += "\n";
+                break;
+
+            case '4':
+                // Add KeyFrames
+                styleText += "    @keyframes " + newAnimationID + " {\n";
+                styleText += "        0% {background-color: red;}\n";
+                styleText += "        10% {background-color: orange;}\n";
+                styleText += "        20% {background-color: yellow;}\n";
+                styleText += "        30% {background-color: green;}\n";
+                styleText += "        40% {background-color: blue;}\n";
+                styleText += "        50% {background-color: purple;}\n";
+                styleText += "        60% {background-color: blue;}\n";
+                styleText += "        70% {background-color: green;}\n";
+                styleText += "        80% {background-color: yellow;}\n";
+                styleText += "        90% {background-color: orange;}\n";
+                styleText += "        100% {transform: rotate(720deg);}\n";
+                styleText += "    }\n";
+
+                // Add Animation Class
+                styleText += "\n";
+                styleText += "    ." + newClassID + " {\n";
+                styleText += "        animation-name: " + newAnimationID + ";\n";
+                styleText += "        animation-duration: 6s;\n";
+                styleText += "        animation-delay: .2s;\n";
+                styleText += "        animation-iteration-count: infinite;\n";
+                // styleText += "        animation-direction: alternate;\n";
+                styleText += "        animation-fill-mode: both;\n";
+                styleText += "        animation-timing-function: linear\n";
+                styleText += "    }\n";
+                styleText += "\n";
+                break;
+
+            case '5':
+                // Add KeyFrames
+                styleText += "    @keyframes " + newAnimationID + " {\n";
+                styleText += "        25% {left: 150px; top: 50px;}\n";
+                styleText += "        50% {left: 150px; top: 150px;}\n";
+                styleText += "        75% {left: 50px; top: 150px;}\n";
+                styleText += "        100% {left: 50px; top: 50px;}\n";
+                styleText += "    }\n";
+
+                // Add Animation Class
+                styleText += "\n";
+                styleText += "    ." + newClassID + " {\n";
+                styleText += "        animation-name: " + newAnimationID + ";\n";
+                styleText += "        animation-duration: 4s;\n";
+                styleText += "        animation-delay: .2s;\n";
+                styleText += "        animation-iteration-count: infinite;\n";
+                // styleText += "        animation-direction: alternate;\n";
+                styleText += "        animation-fill-mode: both;\n";
+                styleText += "        animation-timing-function: linear\n";
+                styleText += "    }\n";
+                styleText += "\n";
+                break;
+        }// ~switch
+
+        // Add Class
+        el.classList.add(newClassID);
+
+        // Append Style
+        style.textContent = styleText;
+        document.body.appendChild(style);
+
+    }
+</script>
+
+
+
+
+<div id="wrap">
+    <div id="container">
+        <div id="myDIV" class="box" style="left: 50px; top: 50px;"></div>
+    </div>
+</div>
+
+
+
+<style type="text/css" id="ANIMATION_">
+    #wrap {
+        border: solid 1px black;
+        width: 550px;
+        height: 550px;
+    }
+
+    #container {
+        position: relative;
+        margin: 5px;
+        border: solid 1px black;
+        width: calc(100% - 15px);
+        height: calc(100% - 15px);
+    }
+
+    #myDIV {
+        position: absolute;
+        left: 50px;
+        top: 50px;
+    }
+
+    .animationStop {
+        animation-play-state: paused;
+    }
+
+</style>
+<script type="text/javascript">
+    myAnimationFunction();
+</script>
+</body>
+</html>
