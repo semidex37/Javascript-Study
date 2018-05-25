@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Change animation-play-state with JavaScript</title>
     <style>
         .box {
             width: 100px;
@@ -28,13 +29,13 @@
     function myPlayFunction() {
         // document.getElementById("myDIV").style.WebkitAnimationPlayState = "running"; // Safari 4.0 - 8.0
         // document.getElementById("myDIV").style.animationPlayState = "running";
-        document.getElementById("myDIV").classList.add("animationStop");
+        document.getElementById("myDIV").classList.remove("animationStop");
     }
 
     function myPauseFunction() {
         // document.getElementById("myDIV").style.WebkitAnimationPlayState = "paused"; // Safari 4.0 - 8.0
         // document.getElementById("myDIV").style.animationPlayState = "paused";
-        document.getElementById("myDIV").classList.remove("animationStop");
+        document.getElementById("myDIV").classList.add("animationStop");
     }
 </script>
 

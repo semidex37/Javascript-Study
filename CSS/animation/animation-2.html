@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>animation-1</title>
+    <title>CSS - Animation keyframes from/to Sample</title>
 </head>
 <body>
+<h1>CSS - Animation keyframes from/to Sample</h1>
 
 <div id="div1" class="box1"></div>
 
@@ -13,8 +14,16 @@
 </script>
 <style type="text/css">
     @keyframes div1 {
-        from { background-color: #000000; }
-        to { background-color: #ffffff; }
+        from {
+            background-color: #000000;
+            opacity: 1;
+            border: solid 1px black;
+        }
+        to {
+            background-color: #ffffff;
+            opacity: 0;
+            border: solid 1px red;
+        }
     }
 
     .box1 {
@@ -26,9 +35,10 @@
         -moz-animation-name: div1;
         -o-animation-name: div1;
         animation-name: div1;
-        animation-delay: 0s;
-        animation-duration: 2s;
+        animation-delay: 1s;
+        animation-duration: 3s;
         animation-iteration-count: infinite;
+        animation-direction: alternate;
     }
 
 /*

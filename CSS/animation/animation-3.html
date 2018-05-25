@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>animation-1</title>
+    <title>CSS - Animation keyframes Percent Sample</title>
 </head>
 <body>
+<h1>CSS - Animation keyframes Percent Sample</h1>
 
 <div id="div1" class="box1"></div>
 
@@ -13,7 +14,7 @@
 </script>
 <style type="text/css">
     @keyframes div1 {
-        0% { background-color: red; }
+        0% { background-color: black; }
         25% { background-color: green; }
         50% { background-color: blue; }
         100% { background-color: black; }
@@ -25,8 +26,9 @@
         width: 100px;
         height: 100px;
         animation-name: div1;
-        animation-duration: 8s;
+        animation-duration: 4s;
         animation-delay: 1s;
+        animation-iteration-count: infinite;
     }
 
 </style>
