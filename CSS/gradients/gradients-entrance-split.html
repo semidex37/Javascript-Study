@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entrance (나타내기) - Split (나누기)</title>
+    <style type="text/css">
+        .wrapper {
+            position: relative;
+            width: 524px;
+            height: 372px;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        .wrapper > img {
+            position: absolute;
+        }
+
+        .wrapper > .animation {
+            position: absolute;
+        }
+
+        .black_box {
+            background: black;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<!--<body>-->
+<body style="background-color: #ccc;">
+<h1>Entrance (나타내기) - Split (나누기)</h1>
+
+
+
+
+
+<p>Horizontal In (가로 안쪽으로)</p>
+<div class="wrapper">
+    <img src="img-1.png" alt="">
+    <div class="animation black_box"></div>
+    <div class="animation slider_horizontal_in_first"></div>
+    <div class="animation slider_horizontal_in_second"></div>
+    <div class="animation slider_horizontal_in_third"></div>
+    <div class="animation slider_horizontal_in_force"></div>
+</div>
+<style type="text/css">
+    .slider_horizontal_in_first {
+        width: 100px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin-left: -100px;
+        background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+        animation: animation_slider_horizontal_in_first 4s both infinite;
+    }
+    .slider_horizontal_in_second {
+        width: 50%;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        animation: animation_slider_horizontal_in_second 4s both infinite;
+    }
+    .slider_horizontal_in_third {
+        width: 100px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin-right: -100px;
+        background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+        animation: animation_slider_horizontal_in_third 4s both infinite;
+    }
+    .slider_horizontal_in_force {
+        width: 50%;
+        left: 50%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        animation: animation_slider_horizontal_in_force 4s both infinite;
+    }
+
+    @keyframes animation_slider_horizontal_in_first {
+        95% {
+            opacity: 1;
+        }
+        100% {
+            left: 50%;
+            opacity: 0;
+        }
+        /*to {*/
+            /*left: 50%;*/
+            /*opacity: 0;*/
+        /*}*/
+    }
+
+    @keyframes animation_slider_horizontal_in_second {
+        to {
+            left: 50%;
+            width: 0;
+        }
+    }
+
+    @keyframes animation_slider_horizontal_in_third {
+        /*to {*/
+            /*right: 50%;*/
+            /*opacity: 0;*/
+        /*}*/
+        95% {
+            opacity: 1;
+        }
+        100% {
+            right: 50%;
+            opacity: 0;
+        }
+    }
+
+    @keyframes animation_slider_horizontal_in_force{
+        to {
+            right: 50%;
+            width: 0;
+        }
+    }
+</style>
+
+
+
+
+
+
+<p>Horizontal Out (가로 바깥쪽으로)</p>
+<div class="wrapper">
+    <img src="img-1.png" alt="">
+    <div class="animation black_box"></div>
+    <div class="animation slider_horizontal_out_first"></div>
+    <div class="animation slider_horizontal_out_second"></div>
+    <div class="animation slider_horizontal_out_third"></div>
+    <div class="animation slider_horizontal_out_force"></div>
+</div>
+<style type="text/css">
+    .slider_horizontal_out_first {
+        width: 50px;
+        top: 0;
+        left: 50%;
+        bottom: 0;
+        background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1));
+        animation: animation_slider_horizontal_out_first 4s both infinite;
+    }
+    .slider_horizontal_out_second {
+        width: 50%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: white;
+        animation: animation_slider_horizontal_out_second 4s both infinite;
+    }
+    .slider_horizontal_out_third {
+        width: 50px;
+        top: 0;
+        right: 50%;
+        bottom: 0;
+        background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
+        animation: animation_slider_horizontal_out_third 4s both infinite;
+    }
+    .slider_horizontal_out_force {
+        width: 50%;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        background: white;
+        animation: animation_slider_horizontal_out_force 4s both infinite;
+    }
+
+    @keyframes animation_slider_horizontal_out_first {
+        to {
+            left: -10%;
+        }
+    }
+
+    @keyframes animation_slider_horizontal_out_second {
+        to {
+            left: -10%;
+            width: 0;
+        }
+    }
+
+    @keyframes animation_slider_horizontal_out_third {
+        to {
+            right: -10%;
+        }
+    }
+
+    @keyframes animation_slider_horizontal_out_force{
+        to {
+            left: 110%;
+            width: 0;
+        }
+    }
+</style>
+
+
+
+
+
+
+<p>Vertical In (세로 안쪽으로)</p>
+<div class="wrapper">
+    <img src="img-1.png" alt="">
+    <div class="animation black_box"></div>
+    <div class="animation slider_vertical_in_first"></div>
+    <div class="animation slider_vertical_in_second"></div>
+    <div class="animation slider_vertical_in_third"></div>
+    <div class="animation slider_vertical_in_force"></div>
+</div>
+<style type="text/css">
+    .slider_vertical_in_first {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 30px;
+        background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+        animation: animation_slider_vertical_in_first 4s both infinite;
+    }
+    .slider_vertical_in_second {
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 50%;
+        background: white;
+        animation: animation_slider_vertical_in_second 4s both infinite;
+    }
+    .slider_vertical_in_third {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 30px;
+        margin-top: 30px;
+        background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+        animation: animation_slider_vertical_in_third 4s both infinite;
+    }
+    .slider_vertical_in_force {
+        left: 0;
+        top: 50%;
+        right: 0;
+        bottom: 0;
+        background: white;
+        animation: animation_slider_vertical_in_force 4s both infinite;
+    }
+
+    @keyframes animation_slider_vertical_in_first {
+        95% {
+            opacity: 1;
+        }
+        100% {
+            top: calc(50% - 30px);
+            opacity: 0;
+        }
+    }
+
+    @keyframes animation_slider_vertical_in_second {
+        to {
+            top: 50%;
+        }
+    }
+
+    @keyframes animation_slider_vertical_in_third {
+        95% {
+            opacity: 1;
+        }
+        100% {
+            bottom: calc(50% - 30px);
+            opacity: 0;
+        }
+    }
+
+    @keyframes animation_slider_vertical_in_force{
+        to {
+            bottom: 50%;
+        }
+    }
+</style>
+
+
+
+
+
+
+<p>Vertical Out (세로 바깥쪽으로)</p>
+<div class="wrapper">
+    <img src="img-1.png" alt="">
+    <div class="animation black_box"></div>
+    <div class="animation slider_vertical_out_first"></div>
+    <div class="animation slider_vertical_out_second"></div>
+    <div class="animation slider_vertical_out_third"></div>
+    <div class="animation slider_vertical_out_force"></div>
+</div>
+<style type="text/css">
+    .slider_vertical_out_first {
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 30px;
+        background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1));
+        animation: animation_slider_vertical_out_first 4s both infinite;
+    }
+    .slider_vertical_out_second {
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 50%;
+        background: white;
+        animation: animation_slider_vertical_out_second 4s both infinite;
+    }
+    .slider_vertical_out_third {
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 30px;
+        margin-top: -30px;
+        background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+        animation: animation_slider_vertical_out_third 4s both infinite;
+    }
+    .slider_vertical_out_force {
+        left: 0;
+        top: 50%;
+        right: 0;
+        bottom: 0;
+        background: white;
+        animation: animation_slider_vertical_out_force 4s both infinite;
+    }
+
+    @keyframes animation_slider_vertical_out_first {
+        to {
+            top: -5%;
+        }
+    }
+
+    @keyframes animation_slider_vertical_out_second {
+        to {
+            bottom: 105%;
+        }
+    }
+
+    @keyframes animation_slider_vertical_out_third {
+        to {
+            top: 105%;
+        }
+    }
+
+    @keyframes animation_slider_vertical_out_force{
+        to {
+            top: 105%;
+        }
+    }
+</style>
+
+
+</body>
+</html>

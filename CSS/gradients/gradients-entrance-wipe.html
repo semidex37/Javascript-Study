@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gradients - 3</title>
+    <style type="text/css">
+        .wrapper {
+            position: relative;
+            width: 524px;
+            height: 372px;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        .wrapper > img {
+            position: absolute;
+        }
+
+        .wrapper > .animation {
+            position: absolute;
+        }
+
+        .black_box {
+            background: black;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body style="background-color: #ccc">
+<h1>Extrance (나타내기) - Wipe (닦아내기)</h1>
+
+
+
+
+
+
+<p>Left</p>
+<div class="wrapper">
+    <img src="img-1.png" alt="">
+    <div class="animation black_box"></div>
+    <div class="animation slider_right_first"></div>
+    <div class="animation slider_right_second"></div>
+</div>
+<style type="text/css">
+    .slider_right_first {
+        width: 50px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin-left: -50px;
+        background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+        animation: animation_slider_right_first 4s both infinite;
+    }
+    .slider_right_second {
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        animation: animation_slider_right_second 4s both infinite;
+    }
+
+    @keyframes animation_slider_right_first {
+        to {
+            left: 110%;
+        }
+    }
+
+    @keyframes animation_slider_right_second {
+        to {left: 110%;}
+    }
+</style>
+
+
+
+
+
+
+<p>Right</p>
+<div class="wrapper">
+    <img src="img-1.png" alt="">
+    <div class="animation black_box"></div>
+    <div class="animation slider_left_first"></div>
+    <div class="animation slider_left_second"></div>
+</div>
+
+<style type="text/css">
+    .slider_left_first {
+        width: 50px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin-right: -50px;
+        background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+        animation: animation_slider_left_first 4s both infinite;
+    }
+
+    .slider_left_second {
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        animation: animation_slider_left_second 4s both infinite;
+    }
+
+    @keyframes animation_slider_left_first {
+        to {right: 110%;}
+    }
+
+    @keyframes animation_slider_left_second {
+        to {right: 110%;}
+    }
+
+</style>
+
+
+
+
+
+
+<p>Top</p>
+<div class="wrapper">
+    <img src="img-1.png" alt="">
+    <div class="animation black_box"></div>
+    <div class="animation slider_top_first"></div>
+    <div class="animation slider_top_second"></div>
+</div>
+<style type="text/css">
+    .slider_top_first {
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 50px;
+        margin-top: -50px;
+        background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+        animation: animation_slider_top_first 4s both infinite;
+    }
+    .slider_top_second {
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        animation: animation_slider_top_second 4s both infinite;
+    }
+    @keyframes animation_slider_top_first {
+        to {top: 110%}
+    }
+    @keyframes animation_slider_top_second {
+        to {top: 110%}
+    }
+</style>
+
+
+
+
+
+
+<p>Bottom</p>
+<div class="wrapper">
+    <img src="img-1.png" alt="">
+    <div class="animation black_box"></div>
+    <div class="animation slider_bottom_first"></div>
+    <div class="animation slider_bottom_second"></div>
+</div>
+<style type="text/css">
+    .slider_bottom_first {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 50px;
+        margin-bottom: -50px;
+        background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1));
+        animation: animation_slider_bottom_first 4s both infinite;
+    }
+    .slider_bottom_second {
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        animation: animation_slider_bottom_second 4s both infinite;
+    }
+    @keyframes animation_slider_bottom_first {
+        to {bottom: 110%;}
+    }
+    @keyframes animation_slider_bottom_second {
+        to {bottom: 110%;}
+    }
+</style>
+
+</body>
+</html>
