@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exit (끝내기) - Box (도형)</title>
+    <style type="text/css">
+        .wrapper {
+            position: relative;
+            width: 524px;
+            height: 372px;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        .wrapper > img {
+            position: absolute;
+        }
+
+        .wrapper > .animation {
+            position: absolute;
+        }
+
+        .black_box {
+            background: black;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Exit (끝내기) - Box (도형)</h1>
+
+
+
+
+
+<p>Exit (끝내기) - Out, Circle (바깥쪽, 원형)</p>
+<div class="wrapper">
+    <img src="img-1.png" alt="">
+    <div class="animation black_box"></div>
+    <div class="animation slider_in_circle_first"></div>
+</div>
+<style type="text/css">
+    .slider_in_circle_first {
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        bottom: 0;
+        border-radius: 100%;
+        background: radial-gradient(rgba(255,255,255,1) 65%, rgba(255,255,255,0));
+        animation: animation_slider_in_circle_first 8s both infinite;
+    }
+
+    @keyframes animation_slider_in_circle_first {
+        to {
+            left: -25%;
+            top: -25%;
+            width: 150%;
+            height: 150%;
+        }
+    }
+</style>
+
+
+
+
+
+<p>Exit (끝내기) - Out, Box (바깥쪽, 상자)</p>
+<div class="wrapper">
+    <img src="img-1.png" alt="">
+    <div class="animation black_box"></div>
+    <div class="animation slider_in_box_first"></div>
+</div>
+<style type="text/css">
+    .slider_in_box_first {
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        bottom: 0;
+        background: radial-gradient(rgba(255,255,255,1) 90%, rgba(255,255,255,0));
+        animation: animation_slider_in_box_first 8s both infinite;
+    }
+
+    @keyframes animation_slider_in_box_first {
+        to {
+            left: -25%;
+            top: -25%;
+            width: 150%;
+            height: 150%;
+        }
+    }
+</style>
+
+
+
+<p>Exit (끝내기) - Out, Diamond (바깥쪽, 다이아몬드)</p>
+<div class="wrapper">
+    <img src="img-1.png" alt="">
+    <div class="animation black_box"></div>
+    <div class="animation slider_in_diamond_first"></div>
+    <div class="animation slider_in_diamond_second"></div>
+    <div class="animation slider_in_diamond_third"></div>
+    <div class="animation slider_in_diamond_force"></div>
+</div>
+<style type="text/css">
+    .slider_in_diamond_first {
+        border-left: 0 solid transparent;
+        border-bottom: 0 solid white;
+        margin-left: 262px;
+        margin-top: 186px;
+        animation: animation_slider_in_diamond_first 8s both infinite;
+    }
+    .slider_in_diamond_second {
+        animation: animation_slider_in_diamond_second 8s both infinite;
+        border-right: 0 solid transparent;
+        border-bottom: 0 solid white;
+        margin-left: 262px;
+        margin-top: 186px;
+    }
+    .slider_in_diamond_third {
+        border-left: 0 solid transparent;
+        border-top: 0 solid white;
+        margin-left: 262px;
+        margin-top: 186px;
+        animation: animation_slider_in_diamond_third 8s both infinite;
+    }
+    .slider_in_diamond_force {
+        border-right: 0 solid transparent;
+        border-top: 0 solid white;
+        margin-left: 262px;
+        margin-top: 186px;
+        animation: animation_slider_in_diamond_force 8s both infinite;
+    }
+
+    @keyframes animation_slider_in_diamond_first {
+        to {
+            border-left: 524px solid transparent;
+            border-bottom: 372px solid white;
+            margin-left: -262px;
+            margin-top: -186px;
+        }
+    }
+    @keyframes animation_slider_in_diamond_second {
+        to {
+            border-right: 524px solid transparent;
+            border-bottom: 372px solid white;
+            margin-left: 262px;
+            margin-top: -186px;
+        }
+    }
+    @keyframes animation_slider_in_diamond_third {
+        to {
+            border-left: 524px solid transparent;
+            border-top: 372px solid white;
+            margin-left: -262px;
+        }
+    }
+    @keyframes animation_slider_in_diamond_force {
+        to {
+            border-right: 524px solid transparent;
+            border-top: 372px solid white;
+            margin-left: 262px;
+        }
+    }
+
+</style>
+
+
+
+
+<p>Exit (끝내기) - Out, Plus Sign (바깥쪽, 더하기 기호)</p>
+<div class="wrapper">
+    <img src="img-1.png" alt="">
+    <div class="animation black_box"></div>
+    <div class="animation slider_in_plus_sign_first"></div>
+    <div class="animation slider_in_plus_sign_second"></div>
+</div>
+<style type="text/css">
+    .slider_in_plus_sign_first {
+        width: 0;
+        margin-left: 50%;
+        height: 100%;
+        background: white;
+        animation: animation_slider_in_plus_sign_first 8s both infinite;
+    }
+    .slider_in_plus_sign_second {
+        height: 0;
+        margin-top: 35%;
+        width: 100%;
+        background: white;
+        animation: animation_slider_in_plus_sign_second 8s both infinite;
+    }
+
+    @keyframes animation_slider_in_plus_sign_first {
+        to {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+    @keyframes animation_slider_in_plus_sign_second {
+        to {
+            margin-top: 0;
+            height: 100%;
+        }
+    }
+
+</style>
+
+</body>
+</html>
