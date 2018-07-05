@@ -174,7 +174,7 @@
 
 
 
-<p>Exit (끝내기) - Out, Plus Sign (바깥쪽, 더하기 기호)</p>
+<p>Exit (끝내기) - Out, Cross (바깥쪽, 더하기 기호)</p>
 <div class="wrapper">
     <img src="img-1.png" alt="">
     <div class="animation black_box"></div>
@@ -183,30 +183,32 @@
 </div>
 <style type="text/css">
     .slider_in_plus_sign_first {
-        width: 0;
-        margin-left: 50%;
-        height: 100%;
+        left: 50%;
+        top: 0;
+        right: 50%;
+        bottom: 0;
         background: white;
         animation: animation_slider_in_plus_sign_first 8s both infinite;
     }
     .slider_in_plus_sign_second {
-        height: 0;
-        margin-top: 35%;
-        width: 100%;
+        left: 0;
+        top: 50%;
+        right: 0;
+        bottom: 50%;
         background: white;
         animation: animation_slider_in_plus_sign_second 8s both infinite;
     }
 
     @keyframes animation_slider_in_plus_sign_first {
         to {
-            margin-left: 0;
-            width: 100%;
+            left: 0;
+            right: 0;
         }
     }
     @keyframes animation_slider_in_plus_sign_second {
         to {
-            margin-top: 0;
-            height: 100%;
+            top: 0;
+            bottom: 0;
         }
     }
 
